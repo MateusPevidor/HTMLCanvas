@@ -1,0 +1,21 @@
+v    control panel
+v      amount [slider / number input]
+x      shape (rotateable) [select]
+v      radius (amplifier/static) [slider / number input]
+v      bg color (gradient) [color picker? / hex]
+v      bg image [file select]
+v      depth [slider / number input]
+v      line distance [slider / number input]
+v      line width (amplifier/changeable) [slider / number input]
+v      speed amplifier (x/y/z) [slider / number input]
+v      fill/stroke/empty/noLines [checkbox]
+v      fill color (random) [click over label]
+v      stroke color (random) [click over label]
+v      line color (rgb/random) [click over label]
+v      reset button
+
+x    action menu (?)
+x      drag
+x      wave spread
+x      attract
+

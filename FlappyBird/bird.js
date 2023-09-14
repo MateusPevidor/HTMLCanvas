@@ -11,7 +11,7 @@ class Bird {
     this.ySpeed = 0
   }
 
-  checkColision() {
+  checkCollision() {
     pipes.forEach(pipe => {
       if ((this.x + this.radius > pipe.x &&
            this.x - this.radius < pipe.x + pipe.w) &&
@@ -41,7 +41,7 @@ class Bird {
   }
 
   update() {
-    this.checkColision()
+    this.checkCollision()
     this.checkScored()
     this.ySpeed += gravity
     this.y += this.ySpeed

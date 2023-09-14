@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self avoiding walk</title>
+
+  <script src="userInterface.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="selfAvoidingWalk.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Self Avoiding Walk</h1>
+    <canvas></canvas>
+    <section>
+      <div>
+        <label>Rows</label>
+        <input type="text" placeholder="Rows" id="rows-input" value="10">
+        <input type="range" min="1" max="100" id="rows-slider" value="10">
+      </div>
+
+      <div>
+        <label>Columns</label>
+        <input type="text" placeholder="Columns" id="columns-input" value="18">
+        <input type="range" min="1" max="100" id="columns-slider" value="18">
+      </div>
+
+      <div>
+        <label>Target length</label>
+        <input type="text" placeholder="Length" id="length-input" value="50">
+        <input type="range" min="1" max="100" id="length-slider" value="50">
+      </div>
+    </section>
+    <section>
+      <button id="walk-button">Walk!</button>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,10 +1,10 @@
-let width = 800
-let height = 800
+const width = 800
+const height = 800
 
-let player = new Player()
-let playerInputs = {up: false, down: false, left: false, right: false, ctrl: false, mouse: {x: 0, y: 0}}
+const player = new Player()
+const playerInputs = {up: false, down: false, left: false, right: false, ctrl: false, mouse: {x: 0, y: 0}}
 
-let walls = new Array()
+const walls = new Array()
 
 walls.push(new Wall(50, 50, 50, 100))
 walls.push(new Wall(600, 50, 150, 50))
@@ -12,12 +12,12 @@ walls.push(new Wall(700, 50, 50, 700))
 
 
 // ------ Canvas Setup ------ //
-let canvas = document.querySelector('canvas')
+const canvas = document.querySelector('canvas')
 
 canvas.width = width
 canvas.height = height
 
-let c = canvas.getContext('2d')
+const c = canvas.getContext('2d')
 
 // -------------------------- //
 

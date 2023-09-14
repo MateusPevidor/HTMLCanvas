@@ -70,7 +70,7 @@ class Piece {
   }
 
   rotate() {
-    if (this.verifyColisionBorders()) {
+    if (this.verifyCollisionBorders()) {
       return
     }
 
@@ -160,7 +160,7 @@ class Piece {
     
   }
 
-  verifyColisionBorders() {
+  verifyCollisionBorders() {
     if ((this.key == 1 || this.key == 2) && ((this.rotation == 3 && this.pos[0] == 0) || (this.rotation == 1 && this.pos[0] == 8))) {
       return true
     }

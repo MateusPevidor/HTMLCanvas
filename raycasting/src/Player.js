@@ -26,15 +26,15 @@ class Player {
     this.angle = Math.atan2(distY, distX) * 180/Math.PI
   }
 
-  verifyColision(walls) {
+  verifyCollision(walls) {
     for (let i = 0; i < walls.length; i++) {
       if (this.x >= walls[i].x && this.x <= walls[i].x + walls[i].w &&
           this.y >= walls[i].y && this.y <= walls[i].y + walls[i].h) {
-          this.speed.x = 0
-          this.speed.y = 0
-          this.x = this.prevPosition.x
-          this.y = this.prevPosition.y
-          return
+        this.speed.x = 0
+        this.speed.y = 0
+        this.x = this.prevPosition.x
+        this.y = this.prevPosition.y
+        return
       }
     }
     this.prevPosition.x = this.x
@@ -42,7 +42,7 @@ class Player {
   }
 
   move(inputs, walls) {
-    let friction = 0.02
+    const friction = 0.02
     if (this.speed.x > 0) {
       this.speed.x -= this.speed.x * friction
     } else if (this.speed.x < 0) {
@@ -67,7 +67,7 @@ class Player {
       this.speed.x += this.acceleration
     }
 
-    this.verifyColision(walls);
+    this.verifyCollision(walls);
 
     this.x += this.speed.x
     this.y += this.speed.y
@@ -85,16 +85,14 @@ class Player {
   }
 
   drawRays() {
-    let rayOffset = this.fov / (this.rayCount - 1)
+    const rayOffset = this.fov / (this.rayCount - 1)
     c.beginPath()
     c.fillStyle = 'rgba(255, 255, 255, 0.3)'
     c.moveTo(this.x, this.y)
     for (let i = 0; i < this.rays.length; i++) {
-      let pos = this.rays[i].fire(this.x, this.y, (rayOffset*i - this.angle - this.fov/2) /180*Math.PI, 1, walls, 0, this.viewDistance/1)
+      const pos = this.rays[i].fire(this.x, this.y, (rayOffset*i - this.angle - this.fov/2) /180*Math.PI, 1, walls, 0, this.viewDistance/1)
       if (pos != null) {
         c.lineTo(pos.x, pos.y)
-      } else {
-        
       }
     }
     c.closePath()

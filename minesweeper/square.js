@@ -6,9 +6,9 @@ class Square {
     this.hasBomb = false
     this.flagged = false
     this.flagSprite = new Image()
-    this.flagSprite.src = 'flag.png'
+    this.flagSprite.src = 'assets/flag.png'
     this.bombSprite = new Image()
-    this.bombSprite.src = 'bomb.png'
+    this.bombSprite.src = 'assets/bomb.png'
   }
 
   addBomb() {
@@ -16,7 +16,6 @@ class Square {
       return false
     }
     this.hasBomb = true
-    sads++
     return true
   }
 
@@ -34,10 +33,6 @@ class Square {
           
       }
     }
-  }
-
-  update() {
-
   }
 
   draw() {
@@ -66,24 +61,17 @@ class Square {
   }
 
   getColor(i) {
-    switch(i) {
-      case 1:
-        return '#0000ff'
-      case 2:
-        return '#008000'
-      case 3:
-        return '#ff0000'
-      case 4:
-        return '#000066'
-      case 5:
-        return '#990066'
-      case 6:
-        return '#007878'
-      case 7:
-        return '#000000'
-      case 8:
-        return '#666666'
-      
-    }
+    const colors = [
+      '#0000ff',
+      '#008000',
+      '#ff0000',
+      '#000066',
+      '#990066',
+      '#007878',
+      '#000000',
+      '#666666'
+    ];
+
+    return colors[i - 1];
   }
 }

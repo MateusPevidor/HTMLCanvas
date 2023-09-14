@@ -10,10 +10,9 @@ const c = canvas.getContext('2d')
 let flags = 0
 let score = 0
 
-let sads = 0
-let bombCount = 990
-let boardSize = { rows: 16, cols: 300 }
-let board = new Board(boardSize.rows, boardSize.cols)
+const bombCount = 990
+const boardSize = { rows: 16, cols: 300 }
+const board = new Board(boardSize.rows, boardSize.cols)
 
 function setup() {
   for (let k = 0; k < bombCount; k++) {
@@ -26,8 +25,8 @@ function setup() {
     }
   }
 
-  board.squares.forEach((row, i) => {
-    row.forEach((square, j) => {
+  board.squares.forEach((row) => {
+    row.forEach((square) => {
       square.calcNearbyBombs()
     })
   })
@@ -114,13 +113,12 @@ $('#runner_4').css('width', '988px')
 $('#runner_1').css('width', '988px')
 
 let colors = [
-  {r: 255, g: 255, b: 000},
-  {r: 255, g: 000, b: 000},
-  {r: 000, g: 192, b: 255},
-  {r: 000, g: 255, b: 000},
+  {r: 255, g: 255, b: 0},
+  {r: 255, g: 0, b: 0},
+  {r: 0, g: 192, b: 255},
+  {r: 0, g: 255, b: 0},
 ]
 for (let i = 1; i < 5; i++) {
   $(`#runner_${i}`).css('background-color', `rgba(${colors[i-1].r}, ${colors[i-1].g}, ${colors[i-1].b}, 0.5)`)
   $(`#runner_${i}`).css('border-right', `2px solid rgba(${colors[i-1].r}, ${colors[i-1].g}, ${colors[i-1].b}, 1)`)
-
 }

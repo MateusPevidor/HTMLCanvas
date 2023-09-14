@@ -86,10 +86,6 @@ class Board {
     }
   }
 
-  update() {
-
-  }
-
   draw() {
     this.squares.forEach((row, i) => {
       row.forEach((square, j) => {

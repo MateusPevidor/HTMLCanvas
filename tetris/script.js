@@ -7,8 +7,8 @@ const c = canvas.getContext('2d')
 
 // -------------------------- //
 
-let controller = new Controller()
-let pieces = new Array()
+const controller = new Controller()
+const pieces = new Array()
 
 function setup() {
   pieces.push(new Piece())
@@ -30,7 +30,7 @@ setInterval(() => {
     piece.shift()
   })
   if (controller.currentPiece.collided) {
-    let newPiece = new Piece()
+    const newPiece = new Piece()
     pieces.push(newPiece)
     controller.setCurrentPiece(newPiece)
   }

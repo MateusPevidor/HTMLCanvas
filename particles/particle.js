@@ -30,7 +30,7 @@ class Particle {
     c.stroke()
   }
 
-  checkColision() {
+  checkCollision() {
     if (this.x + this.radius >= width || this.x - this.radius <= 0) {
       this.xSpeed *= -1
     }
@@ -43,7 +43,7 @@ class Particle {
   }
 
   update(particles) {
-    this.checkColision()
+    this.checkCollision()
     this.x += this.xSpeed * speedAmplifier
     this.y += this.ySpeed * speedAmplifier
     this.z += this.zSpeed * speedAmplifier

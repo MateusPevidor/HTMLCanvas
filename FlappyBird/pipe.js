@@ -2,10 +2,10 @@ class Pipe {
   constructor(startingPosition) {
     this.x = innerWidth + startingPosition
     this.y = 300
-    this.w = innerWidth/10
+    this.w = innerWidth / 10
     this.h = 100
     this.gapY = this.getGapPosition()
-    this.gapHeight = innerHeight/3
+    this.gapHeight = innerHeight / 3
 
     this.xSpeed = 5
     this.counted = false;

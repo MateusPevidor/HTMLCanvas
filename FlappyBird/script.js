@@ -12,7 +12,7 @@ let bird = new Bird()
 let pipes = new Array()
 
 for (let i = 0; i < 6; i++) {
-  pipes.push(new Pipe(i*400))
+  pipes.push(new Pipe(i * 400))
 }
 
 function draw() {
@@ -34,6 +34,6 @@ function updateScore() {
 
 draw()
 
-window.addEventListener('mousedown', event => {
-  bird.flip()
+window.addEventListener('mousedown', _ => {
+  bird.flap()
 })

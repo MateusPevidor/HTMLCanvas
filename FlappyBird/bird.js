@@ -1,25 +1,25 @@
-let gravity = innerHeight/2000
+const gravity = innerHeight/2000
 let dead = false
 let score = 0
 
 class Bird {
   constructor() {
-    this.radius = innerHeight/30
+    this.radius = innerHeight / 30
     this.x = innerWidth / 5
-    this.y = innerHeight/4
+    this.y = innerHeight / 4
 
     this.ySpeed = 0
   }
 
   checkColision() {
     pipes.forEach(pipe => {
-      if (( this.x + this.radius > pipe.x &&
-            this.x - this.radius < pipe.x + pipe.w ) &&
-          ( this.y - this.radius < pipe.gapY || 
-            this.y + this.radius > pipe.gapY + pipe.gapHeight) ||
-           (this.y + this.radius >= innerHeight ||
-            this.y - this.radius <= 0)){
-        
+      if ((this.x + this.radius > pipe.x &&
+           this.x - this.radius < pipe.x + pipe.w) &&
+          (this.y - this.radius < pipe.gapY || 
+           this.y + this.radius > pipe.gapY + pipe.gapHeight) ||
+          (this.y + this.radius >= innerHeight ||
+           this.y - this.radius <= 0
+      )){
         dead = true
       }
     })
@@ -31,12 +31,11 @@ class Bird {
         score++
         updateScore()
         pipe.counted = true
-        console.log('asd')
       }
     })
   }
   
-  flip() {
+  flap() {
     if (!dead)
       this.ySpeed = -innerHeight/100
   }

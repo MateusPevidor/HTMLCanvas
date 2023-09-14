@@ -12,31 +12,22 @@ class Circle {
   }
 
   setSpeed() {
-    this.xSpeed = Math.random() * 0.8
-    this.ySpeed = 0.8 - this.xSpeed
-    if (Math.random() > 0.5){
-      this.xSpeed *= -1
-    }
-    if (Math.random() > 0.5){
-      this.ySpeed *= -1
-    }
+    const angle = Math.random() * Math.PI * 2;
+    this.xSpeed = Math.cos(angle) * 0.8;
+    this.ySpeed = Math.sin(angle) * 0.8;
   }
 
   pickColor() {
-    let i = Math.random() * 3
-    if (i < 1) {
-      this.color = '#f2f2f2'
-    } else if (i < 2) {
-      this.color = '#ffffff'
-    } else {
-      this.color = '#00f6f3'
-    }
+    const colors = ['#f2f2f2', '#ffffff', '#00f6f3'];
+    const index = Math.floor(Math.random() * 3);
+    this.color = colors[index];
   }
 
-  checkColision() {
+  checkCollision() {
     if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
       this.xSpeed *= -1
-    } else if (this.y + this.radius > innerHeight || this.y - this.radius < 0){
+    }
+    if (this.y + this.radius > innerHeight || this.y - this.radius < 0){
       this.ySpeed *= -1
     }
   }
@@ -45,17 +36,21 @@ class Circle {
     if (Math.abs(mouseX - this.x) < 70 && Math.abs(mouseY - this.y) < 70) {
       if (this.radius < 50) {
         this.radius += 4.9
+      } else {
+        this.radius = 50;
       }
     } else {
       if (this.radius > 7) {
         this.radius -= 3.5
+      } else {
+        this.radius = 7;
       }
     }
   }
 
   update() {
     this.checkMouseNearby()
-    this.checkColision()
+    this.checkCollision()
     this.x += this.xSpeed
     this.y += this.ySpeed
   }

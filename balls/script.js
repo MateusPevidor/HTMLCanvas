@@ -1,18 +1,18 @@
-let canvas = document.querySelector('canvas');
+const canvas = document.querySelector('canvas');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let c = canvas.getContext('2d')
+const c = canvas.getContext('2d')
 
-let mouseX, mouseY, mouseIsDown
+let mouseX, mouseY;
 
 window.addEventListener('mousemove', (event) => {
   mouseX = event.x
   mouseY = event.y
 })
 
-let circles = new Array()
+const circles = new Array()
 for (let i = 0; i < 1000; i++) {
   circles.push(new Circle())
 }

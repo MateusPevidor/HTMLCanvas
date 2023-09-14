@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Pointed Star</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="script.js" defer></script>
+    <script src="gui.js" defer></script>
+  </head>
+  <body>
+    <div id="root">
+      <canvas></canvas>
+      <div class="gui">
+        <div>
+          <p>Points: <span id="points-label">7</span></p>
+          <input type="range" min="1" max="200" id="points-input" value="7">
+        </div>
+        <div>
+          <p>Radius: <span id="radius-label">150</span></p>
+          <input type="range" min="10" max="800" step="10" id="radius-input" value="150">
+        </div>
+        <div id="points-sequences-wrapper"></div>
+        <button class="add-button" onclick="addSequence()">Add sequence</button>
+      </div>
+    </div>
+  </body>
+</html>

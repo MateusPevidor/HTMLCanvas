@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  border: 1px solid black;
+  margin: 6px 0 0 6px;
+}
+
+.gui {
+  margin: 6px 0 0 6px;
+  display: flex;
+  gap: 10px;
+}
+
+input[type=text] {
+  height: 1.5rem;
+}
+
+.add-button {
+  max-height: 2rem;
+}
+
+.sequence > button {
+  height: 1.5rem;
+  width: 1.5rem;
+}

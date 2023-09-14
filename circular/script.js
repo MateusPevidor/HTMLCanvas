@@ -17,7 +17,6 @@ for (let i = 0; i < 30; i++) {
 function draw() {
   requestAnimationFrame(draw)
   c.clearRect(0, 0, innerWidth, innerHeight)
-
   particles.forEach(particle => {
     particle.update()
     particle.draw()

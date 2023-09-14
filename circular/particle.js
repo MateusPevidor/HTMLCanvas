@@ -1,3 +1,5 @@
+const colors = ['#ccf7ff', '#9cebff', '#76e3ff', '#46d9f9']
+
 class Particle {
   constructor(radius) {
     this.radius = radius
@@ -9,17 +11,8 @@ class Particle {
   }
 
   pickColor() {
-    let i = Math.floor(Math.random() * 5) + 2
-    switch(i) {
-      case 2:
-        return '#ccf7ff'
-      case 3:
-        return '#9cebff'
-      case 4:
-        return '#76e3ff'
-      case 5:
-        return '#46d9f9'
-    }
+    const index = Math.floor(Math.random() * colors.length)
+    return colors[index]
   }
 
   update() {
@@ -32,6 +25,7 @@ class Particle {
 
   draw() {
     c.beginPath()
+    c.lineCap = 'round'
     c.arc(this.x, this.y, 10, 0, Math.PI*2, true)
     c.fillStyle = this.color
     c.fill()

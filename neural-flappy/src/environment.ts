@@ -1,4 +1,4 @@
-import Time from "./time";
+import Time from "./time.js";
 
 type Position = {
   x: number;

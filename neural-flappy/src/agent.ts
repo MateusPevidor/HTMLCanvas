@@ -1,6 +1,6 @@
-import Environment from "./environment";
-import NN from "./nn";
-import Time from "./time";
+import Environment from "./environment.js";
+import NN from "./nn.js";
+import Time from "./time.js";
 
 type Position = {
   x: number,

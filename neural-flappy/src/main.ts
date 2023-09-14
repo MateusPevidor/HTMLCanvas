@@ -1,7 +1,7 @@
-import Agent from './agent';
-import Environment from './environment';
-import Time from './time';
-import Utils from './utils';
+import Agent from './agent.js';
+import Environment from './environment.js';
+import Time from './time.js';
+import Utils from './utils.js';
 
 const canvas = document?.querySelector('canvas');
 const c = canvas.getContext('2d');
@@ -26,16 +26,6 @@ function setup() {
   for (let i = 0; i < agentsCount; i++) {
     agents.push(new Agent(environment));
   }
-
-  // agents[0].nn.bias1 = 147.35227988717085;
-  // agents[0].nn.bias2 = 145.32419383448274;
-  // agents[0].nn.bias3 = 175.81733957331392;
-  // agents[0].nn.weights01[0][0] = -60.99523360262583;
-  // agents[0].nn.weights01[0][1] = 174.02721799856874;
-  // agents[0].nn.weights11[0][0] = 174.45510998188388;
-  // agents[0].nn.weights11[0][1] = 0.964872005970121;
-  // agents[0].nn.weights22[0][0] = -89.51769963109363;
-  // agents[0].nn.weights22[0][1] = -244.51084342483665;
 
   for (let i = 0; i < agentsCount; i++) {
     agents[i].start();

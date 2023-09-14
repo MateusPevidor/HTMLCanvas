@@ -1,4 +1,4 @@
-import Utils from "./utils";
+import Utils from "./utils.js";
 
 class NN {
   public weights01: number[][];

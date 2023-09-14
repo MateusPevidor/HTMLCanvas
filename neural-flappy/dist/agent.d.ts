@@ -1,4 +1,4 @@
-import Environment from "./environment";
+import Environment from "./environment.js";
 import NN from "./nn.js";
 declare type Position = {
     x: number;
